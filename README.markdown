@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/logicminds/puppet-nonrootlib.png)](https://travis-ci.org/logicminds/puppet-nonrootlib)
+
 ## nonrootlib
 
 Over the past few years I have written many puppet modules that do not have root access.  Over this time I have
