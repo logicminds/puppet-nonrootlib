@@ -2,7 +2,7 @@
 
 Over the past few years I have written many puppet modules that do not have root access.  Over this time I have
 developed a pattern for creating nonroot puppet modules.  This module intends to use many of the tricks, secrets and
-I have learned over the years.  While this module at the moment does not do much, it lays down a framework for any
+patterns I have learned over the years.  While this module at the moment does not do much, it lays down a framework for any
 future modules to inherit from.  This module should be thought of as a stdlib for nonroot puppet development.
 Include this module in your classes or inherit it.
 
@@ -143,6 +143,14 @@ unit tests please have a look in my spec/classes/nonrootlib_spec.rb file.
 
 ### Running unit tests
 
+1. Install the necessary gems for unit tests.
+    * rspec-puppet
+    * puppetlabs_spec_helper
+    * puppet-lint
+    * rake
+    * rspec
+
+2. rake spec
 
 License
 -------
