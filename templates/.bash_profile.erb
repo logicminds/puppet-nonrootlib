@@ -1,0 +1,15 @@
+
+export NONROOT_BIN=<%= @install_core %>/bin
+
+export HOME=<%= @install_core %>
+
+# things you will need to set to make nonroot user
+#export GEM_HOME=$HOME/.rubygems
+#export GEM_PATH=$HOME/.rubygems:/usr/lib/ruby/gems/1.8:/usr/lib64/ruby/gems/1.8:/usr/lib64/ruby/gems/1.9
+#export RUBYLIB=<%= @install_core %>/apps/mcollective/lib
+#RUBYIES_BIN=<%= @install_core %>/.rubygems/bin
+#export PATH=$RUBYIES_BIN:$JAVA_BIN:$NONROOT_BIN:$PATH
+
+export PATH=$NONROOT_BIN:$PATH
+export PS1='\h:\W \u\$ '
+

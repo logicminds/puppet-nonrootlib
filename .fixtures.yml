@@ -1,0 +1,4 @@
+fixtures:
+  symlinks:
+    nonrootlib: "#{source_dir}"
+
