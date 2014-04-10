@@ -70,7 +70,7 @@ class puppet( $service_state = 'running'){
        content => template('puppet/sysconfig/puppet.erb'),
      }
 
-     file {$puppetconf_file:
+     file {$puppet_conf_file:
        ensure  => present,
        mode    => '0750',
        content => template('puppet/puppet.conf.erb'),
@@ -133,6 +133,15 @@ Feel free to provide a PR for setting up a systemd or upstart system in nonroot.
 ### Contributing
 Please fork this repo and issue a pull request.  Please write unit tests for your code.  If your not sure how to write
 unit tests please have a look in my spec/classes/nonrootlib_spec.rb file.
+
+### Custom Facts
+    * home_dir  (gets the home directory of the user puppet runs as)
+
+### Puppet Functions
+    * get_remote_data (gets the contents of a remote url location)
+    * is_valid_url  (validates the given url is a valid http url)
+
+### Running unit tests
 
 
 License
