@@ -1,4 +1,4 @@
-name    'nonrootlib'
+name    'logicminds-nonrootlib'
 version '0.1.0'
 source 'https://github.com/logicminds/puppet-nonrootlib.git'
 author 'Corey Osman <corey@logicminds.biz>'
