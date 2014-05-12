@@ -71,8 +71,7 @@ class nonrootlib(
   }
 
   file {"${bin_dir}/service":
-    ensure  => present,
-    mode    => '0750',
+    ensure  => 'present',
     content => template('nonrootlib/service.erb'),
     require => File[$bin_dir]
   }
