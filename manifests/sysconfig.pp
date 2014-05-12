@@ -2,8 +2,8 @@
 
 define nonrootlib::sysconfig_file(
   $sysconfig_file_name = $name,
-  $data = {}
-  $template = '<%= @data.each { |key, value| "#{key}=#{value}\n" } %>'
+  $data = {},
+  $template = '<%= @data.each { |key, value| "#{key}=#{value}\n" } %>',
   $ensure_value = 'present'
 ){
 
