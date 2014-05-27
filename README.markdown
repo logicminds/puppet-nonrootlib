@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/logicminds/puppet-nonrootlib.png)](https://travis-ci.org/logicminds/puppet-nonrootlib)
+[![Build Status](https://travis-ci.org/logicminds/logicminds-nonrootlib.png)](https://travis-ci.org/logicminds/logicminds-nonrootlib)
 
 ## nonrootlib
 
@@ -23,6 +23,13 @@ few simple rules.
     with your code.
  3. You must include, require or inherit the nonrootlib class so that you can access these variables.
 
+### Features
+1. init.pp creates a posix like directory structure just like you would have in a root environment
+2. sysconfig define to allow you to easily create sysconfig files
+3. init script define to allow you to easily create init script files for our services.
+4. homedir fact
+5. get_remote_data function to get json data from a remote destination
+6. is_url_valid function to validate a url string
 
 To access a variable just do the following
 
@@ -145,12 +152,13 @@ unit tests please have a look in my spec/classes/nonrootlib_spec.rb file.
 
 ### Running unit tests
 
-1. Install the necessary gems for unit tests.
+1. Install the necessary gems for unit tests.  (bundle install)
     * rspec-puppet
     * puppetlabs_spec_helper
     * puppet-lint
     * rake
     * rspec
+    * json
 
 2. rake spec
 
