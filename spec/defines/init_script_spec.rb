@@ -17,8 +17,8 @@ describe 'nonrootlib::init_script' do
   let (:title) do
      'rsyslogd'
   end
-  it { should contain_file('/home/user1/etc/init.d/rsyslogd') }
-  it { should contain_file('/home/user1/etc/rsyslogd').with_ensure('directory') }
+  it { is_expected.to contain_file('/home/user1/etc/init.d/rsyslogd') }
+  it { is_expected.to contain_file('/home/user1/etc/rsyslogd').with_ensure('directory') }
 
 
 end

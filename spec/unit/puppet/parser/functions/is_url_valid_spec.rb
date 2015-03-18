@@ -4,11 +4,11 @@ describe "is_url_valid function" do
   let(:scope) { PuppetlabsSpec::PuppetInternals.scope }
 
   it "should exist" do
-    Puppet::Parser::Functions.function("is_url_valid").should == "function_is_url_valid"
+    expect(Puppet::Parser::Functions.function("is_url_valid")).to eq("function_is_url_valid")
   end
 
   it "should raise a ParseError if there is less than 1 arguments" do
-    lambda { scope.function_is_url_valid([]) }.should( raise_error(Puppet::ParseError))
+    expect { scope.function_is_url_valid([]) }.to( raise_error(Puppet::ParseError))
   end
 
   context 'bad url' do
@@ -16,7 +16,7 @@ describe "is_url_valid function" do
       'htt://www.google.com'
     end
     it 'should return false' do
-      scope.function_is_url_valid([url]).should be_false
+      expect(scope.function_is_url_valid([url])).to be_falsey
     end
 
   end
@@ -26,7 +26,7 @@ describe "is_url_valid function" do
       'http://www.google.com'
     end
     it 'should return true ' do
-      scope.function_is_url_valid([url]).should be_true
+      expect(scope.function_is_url_valid([url])).to be_truthy
     end
 
   end

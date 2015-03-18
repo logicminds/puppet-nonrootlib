@@ -21,5 +21,5 @@ describe 'nonrootlib::sysconfig' do
     'rsyslog'
   end
 
-  it { should contain_file('/home/user1/etc/sysconfig/rsyslog').with_content("demokey1=value1\ndemokey2=value2\n")}
+  it { is_expected.to contain_file('/home/user1/etc/sysconfig/rsyslog').with_content("demokey1=value1\ndemokey2=value2\n")}
 end

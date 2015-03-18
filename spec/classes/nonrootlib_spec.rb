@@ -21,7 +21,7 @@ describe 'nonrootlib' do
       
     }
   end
-  it { should contain_file('/home/user1/bin/service')}
+  it { is_expected.to contain_file('/home/user1/bin/service')}
   [ '/home/user1',
     '/home/user1/.bash_profile',
     '/home/user1/bin',
@@ -38,7 +38,7 @@ describe 'nonrootlib' do
     '/home/user1/tmp',
     '/home/user1/var/log',
   ].each do |dir|
-    it { should contain_file(dir).with_owner('user1').with_group('user1') }
+    it { is_expected.to contain_file(dir).with_owner('user1').with_group('user1') }
   end
 
   describe 'using facts' do
@@ -68,7 +68,7 @@ describe 'nonrootlib' do
       '/home/user2/tmp',
       '/home/user2/var/log',
     ].each do |dir|
-      it { should contain_file(dir).with_owner('user2').with_group('user2') }
+      it { is_expected.to contain_file(dir).with_owner('user2').with_group('user2') }
     end
   end
 end
