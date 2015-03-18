@@ -2,16 +2,15 @@ source 'https://rubygems.org'
 
 group :development, :test do
   gem 'rake'
-  gem 'puppetlabs_spec_helper', '>= 0.4.1', :require => false
-  gem 'puppet-lint', '~> 0.3.2'
-  gem 'puppet-syntax'
-  gem 'json'
+  gem 'puppetlabs_spec_helper'
+  gem 'puppet-blacksmith'
+  gem 'puppet-lint'
 end
 
 if puppetversion = ENV['PUPPET_GEM_VERSION']
   gem 'puppet', puppetversion, :require => false
 else
-  gem 'puppet', :require => false
+  gem 'puppet', "=3.7.4", :require => false
 end
 
 # vim:ft=ruby

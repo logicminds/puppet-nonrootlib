@@ -1,0 +1,102 @@
+{
+  "name": "logicminds-nonrootlib",
+  "author": "Corey Osman",
+  "description": "A library for puppet users with no root access. This modules sets up a sysinit like directory structure so that puppet resources like service can be utilized.  This module should be a part of every nonroot module to ensure a similar directory structure.  See website for more information.",
+  "license": "Apache License, Version 2.0",
+  "project_page": "http://www.github.com/logicminds/logicminds-nonrootlib",
+  "source": "https://github.com/logicminds/logicminds-nonrootlib.git",
+  "description": "A set of facts, directories and nonroot hacks to make running puppet under nonroot easier.",
+  "version": "0.1.0",
+  "issues_url": "http://www.github.com/logicminds/logicminds-nonrootlib/issues",
+  "types": [
+    {
+      "parameters": [
+        {
+          "name": "user1",
+          "doc": "The username to be added"
+        },
+        {
+          "name": "user1pass"
+        },
+        {
+          "name": "ip"
+        },
+        {
+          "name": "bootdevice"
+        },
+        {
+          "name": "subnet"
+        },
+        {
+          "name": "gateway"
+        },
+        {
+          "name": "channel"
+        },
+        {
+          "name": "vlanid"
+        },
+        {
+          "name": "channel"
+        }
+      ],
+      "name": "bmc",
+      "doc": "Manage BMC devices"
+    }
+  ],
+  "operatingsystem_support": [
+    {
+      "operatingsystem": "RedHat",
+      "operatingsystemrelease": [
+        "4",
+        "5",
+        "6",
+        "7"
+      ]
+    },
+    {
+      "operatingsystem": "CentOS",
+      "operatingsystemrelease": [
+        "4",
+        "5",
+        "6",
+        "7"
+      ]
+    },
+    {
+      "operatingsystem": "OracleLinux",
+      "operatingsystemrelease": [
+        "4",
+        "5",
+        "6",
+        "7"
+      ]
+    },
+    {
+      "operatingsystem": "Scientific",
+      "operatingsystemrelease": [
+        "5",
+        "6",
+        "7"
+      ]
+    },
+    {
+      "operatingsystem": "Debian",
+      "operatingsystemrelease": [
+        "6",
+        "7"
+      ]
+    },
+    {
+      "operatingsystem": "Ubuntu",
+      "operatingsystemrelease": [
+        "10.04",
+        "12.04",
+        "14.04"
+      ]
+    }
+  ],
+  "dependencies": [
+
+  ]
+}

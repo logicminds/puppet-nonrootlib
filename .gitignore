@@ -1,3 +1,7 @@
 spec/fixtures/modules/nonrootlib
+Gemfile.lock
+.bundle
+pkg
+.idea
 spec/fixtures/manifests
 spec/fixtures/modules/stdlib
