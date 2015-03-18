@@ -6,7 +6,7 @@
   "project_page": "http://www.github.com/logicminds/puppet-nonrootlib",
   "source": "https://github.com/logicminds/puppet-nonrootlib.git",
   "summary": "A set of facts, directories and nonroot hacks to make running puppet under nonroot easier.",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "issues_url": "http://www.github.com/logicminds/puppet-nonrootlib/issues",
   "types": [
     {
