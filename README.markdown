@@ -37,11 +37,11 @@ To access a variable just do the following
 
    include nonrootlib
 
-   info("Kaboom, my run directory is ${nonrootlib::run_dir}"
+   info("Kaboom, my run directory is ${nonrootlib::run_dir}")
 
    file{"${nonrootlib::run_dir}/file1.txt": ensure => 'present'}
 
-   # or use more memory and scope the variable to the your class
+   # or use more memory and scope the variable to your class
    $run_dir = nonrootlib::run_dir
 
 ```
@@ -72,54 +72,55 @@ class puppet( $service_state = 'running'){
        ensure  => 'link',
        target  => "${pconf_dir}/var/state/classes.txt",
        require => File[$puppet_dirs]
-     }
-     file {"${nonrootlib::sysconfig_dir}/puppet":
-       ensure  => present,
-       mode    => '0750',
-       content => template('puppet/sysconfig/puppet.erb'),
-     }
+   }
 
-     file {$puppet_conf_file:
-       ensure  => present,
-       mode    => '0750',
-       content => template('puppet/puppet.conf.erb'),
-       require => File[$pconf_dir],
-     }
-     file {"${pconf_dir}/auth.conf":
-       ensure  => present,
-       mode    => '0750',
-       content => template('puppet/auth.conf.erb'),
-       require => File[$pconf_dir],
-     }
-     file {"${nonrootlib::initd_dir}/puppet":
-       ensure  => present,
-       mode    => '0750',
-       content => template('puppet/puppet.init.erb'),
-     }
+   file {"${nonrootlib::sysconfig_dir}/puppet":
+     ensure  => present,
+     mode    => '0750',
+     content => template('puppet/sysconfig/puppet.erb'),
+   }
 
-     file {"${nonrootlib::bin_dir}/puppet_check.sh":
-       ensure  => present,
-       mode    => '0750',
-       content => template('puppet/puppet_check.sh.erb'),
-     }
-     file {"${nonrootlib::bin_dir}/puppetpostrun.sh":
-       ensure  => present,
-       mode    => '0750',
-       content => template('puppet/puppet_post_run.sh.erb'),
-     }
+   file {$puppet_conf_file:
+     ensure  => present,
+     mode    => '0750',
+     content => template('puppet/puppet.conf.erb'),
+     require => File[$pconf_dir],
+   }
+   file {"${pconf_dir}/auth.conf":
+     ensure  => present,
+     mode    => '0750',
+     content => template('puppet/auth.conf.erb'),
+     require => File[$pconf_dir],
+   }
+   file {"${nonrootlib::initd_dir}/puppet":
+     ensure  => present,
+     mode    => '0750',
+     content => template('puppet/puppet.init.erb'),
+   }
 
-    # because we have a common place for our init files in our non root directory
-    # we can use the service resource as it was intended, except with the init provider instead.
+   file {"${nonrootlib::bin_dir}/puppet_check.sh":
+     ensure  => present,
+     mode    => '0750',
+     content => template('puppet/puppet_check.sh.erb'),
+   }
 
-    service{"puppet":
-       ensure => $service_state,
-       provider => "init",
-       hasstatus  => true,
-       hasrestart => true,
-       path       => $initd_dir,
-       subscribe  => File[$puppet_conf_file, "${pconf_dir}/auth.conf",
+   file {"${nonrootlib::bin_dir}/puppetpostrun.sh":
+     ensure  => present,
+     mode    => '0750',
+     content => template('puppet/puppet_post_run.sh.erb'),
+   }
+   # because we have a common place for our init files in our non root directory
+   # we can use the service resource as it was intended, except with the init provider instead.
+
+   service{"puppet":
+     ensure => $service_state,
+     provider => "init",
+     hasstatus  => true,
+     hasrestart => true,
+     path       => $initd_dir,
+     subscribe  => File[$puppet_conf_file, "${pconf_dir}/auth.conf",
        "${nonrootlib::initd_dir}/puppet", "${nonrootlib::sysconfig_dir}/puppet" ]
-    }
+   }
 }
 
 
